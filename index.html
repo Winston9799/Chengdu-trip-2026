@@ -61,10 +61,12 @@
   .dtitle{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700}
   .dtag{font-size:10px;letter-spacing:2px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted)}
   .db{background:#fff;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.05)}
-  .sr{display:grid;grid-template-columns:100px 1fr;border-bottom:1px solid #f0e8d8;min-height:90px}
+  .sr{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid #f0e8d8;min-height:110px}
   .sr:last-child{border-bottom:none}
-  .si{position:relative;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:32px}
-  .tlabel{position:absolute;top:6px;left:0;background:var(--gold);color:#fff;font-size:9px;letter-spacing:2px;padding:2px 7px;font-weight:600}
+  .si{position:relative;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:32px;overflow:hidden}
+  .si img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .sr:hover .si img{transform:scale(1.07)}
+  .tlabel{position:absolute;top:6px;left:0;background:var(--gold);color:#fff;font-size:9px;letter-spacing:2px;padding:2px 7px;font-weight:600;z-index:2}
   .sc{padding:14px 18px;display:flex;flex-direction:column;gap:3px}
   .sc .act{font-weight:600;font-size:14px}
   .sc .tip{font-size:12px;color:var(--muted);line-height:1.6}
@@ -72,9 +74,6 @@
   .tb{display:inline-block;background:#FFF3CD;color:#856404;font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid #FFEEBA}
   .tb.m{background:#FDECEA;color:var(--red);border-color:#FAC5C0}
   .tb.s{background:#EEF2FF;color:var(--sq);border-color:#C7D2FE}
-  .abtn{display:inline-flex;align-items:center;gap:5px;background:#FF6B35;color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;text-decoration:none;font-weight:500;white-space:nowrap;margin-top:4px}
-  .abtn svg{width:12px;height:12px;fill:#fff;flex-shrink:0}
-  .abtn.walk{background:#2d6a4f}
   .fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
   .fc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;gap:12px;align-items:flex-start;opacity:0;transform:translateY(16px);transition:all .4s ease}
   .fc.vis{opacity:1;transform:translateY(0)}
@@ -94,10 +93,11 @@
   .outro .auth{margin-top:24px;font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.3)}
   .outro .spice{display:inline-block;margin-top:32px;background:var(--red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
   hr.div{border:none;border-top:1px solid var(--border);max-width:960px;margin:0 auto}
-  @media(max-width:640px){.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}.vdeco{display:none}.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}.sr{grid-template-columns:80px 1fr}}
+  @media(max-width:640px){.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}.vdeco{display:none}.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}.sr{grid-template-columns:100px 1fr}}
 </style>
 </head>
 <body>
+
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="ink"></div><div class="ink"></div><div class="ink"></div>
@@ -113,6 +113,7 @@
   </div>
   <div class="scrollhint"><div class="sline"></div><span>向下滑动</span></div>
 </section>
+
 <div class="fbanner">
   <div class="finner">
     <div class="fleg">
@@ -130,6 +131,7 @@
     </div>
   </div>
 </div>
+
 <div class="hstrip">
   <div class="hinner">
     <div style="font-size:26px">🏨</div>
@@ -140,6 +142,7 @@
     <span class="hbadge">⭐ 五星 · 春熙路 1.3km</span>
   </div>
 </div>
+
 <div class="ovw">
   <div class="ovw-i"><div class="n">8</div><div class="l">天 · 行程</div></div>
   <div class="ovw-i"><div class="n">7</div><div class="l">晚 · JW Marriott</div></div>
@@ -147,84 +150,175 @@
   <div class="ovw-i"><div class="n">20°</div><div class="l">早晚凉爽</div></div>
   <div class="ovw-i"><div class="n">🐼</div><div class="l">国宝必看</div></div>
 </div>
+
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:20px">🗺️</span><h2>每日行程</h2><div class="ln"></div></div>
   <div class="tl">
+
+    <!-- D1 -->
     <div class="dc">
       <div class="dot">一</div>
       <div class="dh"><span class="ddate">9月17日（周四）</span><span class="dtitle">飞抵成都 · 初见繁华</span><span class="dtag">轻松</span></div>
       <div class="db">
-        <div class="sr"><div class="si">✈️<span class="tlabel">中午</span></div><div class="sc"><div class="act">✈️ SQ842 樟宜 T3 起飞</div><div class="tip">12:25 起飞 → 17:10 抵 TFU T1，飞行 4h 45m</div><div class="bgs"><span class="tb s">提前 2.5h 到达 Changi T3</span></div></div></div>
-        <div class="sr"><div class="si">🏨<span class="tlabel">傍晚</span></div><div class="sc"><div class="act">🏨 入住 JW Marriott Chengdu</div><div class="tip">机场至酒店约 50km，打车约 50 分钟（¥120–150），或酒店商务车 ¥300</div></div></div>
-        <div class="sr"><div class="si" style="background:#f5f0e8">🍄<span class="tlabel">晚餐</span></div><div class="sc"><div class="act">🍄 爱尚菌·云南野生菌火锅（春熙路太古里店）</div><div class="tip">东大街香槟广场3楼，步行约15分钟。9月菌子季食材最新鲜，清鲜汤底暖胃，完美第一晚。人均约¥104。</div><div class="bgs"><span class="tb" style="background:#FFF8E7;color:#7B5E00;border-color:#F0D080;">🍄 旺季建议提前大众点评预约</span></div></div></div>
-        <div class="sr"><div class="si">🐼<span class="tlabel">夜晚</span></div><div class="sc"><div class="act">🐼 IFS 爬墙熊猫 → 远洋太古里</div><div class="tip">饭后步行约 5 分钟，裸眼 3D 大屏打卡圣地</div></div></div>
+        <div class="sr">
+          <div class="si">✈️<span class="tlabel">中午</span></div>
+          <div class="sc"><div class="act">✈️ SQ842 樟宜 T3 起飞</div><div class="tip">12:25 起飞 → 17:10 抵 TFU T1，飞行 4h 45m</div><div class="bgs"><span class="tb s">提前 2.5h 到达 Changi T3</span></div></div>
+        </div>
+        <div class="sr">
+          <div class="si">🏨<span class="tlabel">傍晚</span></div>
+          <div class="sc"><div class="act">🏨 入住 JW Marriott Chengdu</div><div class="tip">机场至酒店约 50km，打车约 50 分钟（¥120–150），或酒店商务车 ¥300</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#f5f0e8">🍄<span class="tlabel">晚餐</span></div>
+          <div class="sc"><div class="act">🍄 爱尚菌·云南野生菌火锅（春熙路太古里店）</div><div class="tip">东大街香槟广场3楼，步行约15分钟。9月菌子季食材最新鲜，清鲜汤底暖胃，完美第一晚。人均约¥104。</div><div class="bgs"><span class="tb" style="background:#FFF8E7;color:#7B5E00;border-color:#F0D080;">🍄 旺季建议提前大众点评预约</span></div></div>
+        </div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Chengdu_IFS_Giant_Panda_Climbing_Building.jpg/640px-Chengdu_IFS_Giant_Panda_Climbing_Building.jpg" alt="IFS熊猫" onerror="this.style.display='none'"><span class="tlabel">夜晚</span></div>
+          <div class="sc"><div class="act">🐼 IFS 爬墙熊猫 → 远洋太古里</div><div class="tip">饭后步行约 5 分钟，裸眼 3D 大屏打卡圣地</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D2 -->
     <div class="dc">
       <div class="dot">二</div>
       <div class="dh"><span class="ddate">9月18日（周五）</span><span class="dtitle">国宝熊猫 · 东郊记忆</span><span class="dtag">必去</span></div>
       <div class="db">
-        <div class="sr"><div class="si">🐼<span class="tlabel">早上</span></div><div class="sc"><div class="act">🐼 成都大熊猫繁育研究基地</div><div class="tip">8:00 前入园，上午熊猫最活跃。打车约 20 分钟。</div><div class="bgs"><span class="tb m">⚠️ 提前14天公众号预约</span></div></div></div>
-        <div class="sr"><div class="si">🎨<span class="tlabel">下午</span></div><div class="sc"><div class="act">🎨 东郊记忆文创园</div><div class="tip">旧工厂改造文艺街区，壁画打卡、手冲咖啡</div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Giant_Panda_at_Chengdu_Research_Base.jpg/640px-Giant_Panda_at_Chengdu_Research_Base.jpg" alt="熊猫基地" onerror="this.style.display='none'">🐼<span class="tlabel">早上</span></div>
+          <div class="sc"><div class="act">🐼 成都大熊猫繁育研究基地</div><div class="tip">8:00 前入园，上午熊猫最活跃。打车约 20 分钟。</div><div class="bgs"><span class="tb m">⚠️ 提前14天公众号预约</span></div></div>
+        </div>
+        <div class="sr">
+          <div class="si">🎨<span class="tlabel">下午</span></div>
+          <div class="sc"><div class="act">🎨 东郊记忆文创园</div><div class="tip">旧工厂改造文艺街区，壁画打卡、手冲咖啡</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D3 -->
     <div class="dc">
       <div class="dot">三</div>
       <div class="dh"><span class="ddate">9月19日（周六）</span><span class="dtitle">博物馆 · 茶馆 · 宽窄巷</span><span class="dtag">文化</span></div>
       <div class="db">
-        <div class="sr"><div class="si">🏛️<span class="tlabel">上午</span></div><div class="sc"><div class="act">🏛️ 成都博物馆</div><div class="tip">步行约 10 分钟，免费，需公众号预约</div><div class="bgs"><span class="tb m">周一闭馆</span></div></div></div>
-        <div class="sr"><div class="si">🍵<span class="tlabel">下午</span></div><div class="sc"><div class="act">🍵 人民公园 · 鹤鸣茶社</div><div class="tip">5 元盖碗茶 + 采耳，最地道的成都慢生活</div></div></div>
-        <div class="sr"><div class="si">🏘️<span class="tlabel">傍晚</span></div><div class="sc"><div class="act">🏘️ 宽窄巷子夜游</div><div class="tip">傍晚人少，历史街区，伴手礼选购</div></div></div>
+        <div class="sr">
+          <div class="si">🏛️<span class="tlabel">上午</span></div>
+          <div class="sc"><div class="act">🏛️ 成都博物馆</div><div class="tip">步行约 10 分钟，免费，需公众号预约</div><div class="bgs"><span class="tb m">周一闭馆</span></div></div>
+        </div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Heming_Teahouse_Chengdu.jpg/640px-Heming_Teahouse_Chengdu.jpg" alt="鹤鸣茶社" onerror="this.style.display='none'">🍵<span class="tlabel">下午</span></div>
+          <div class="sc"><div class="act">🍵 人民公园 · 鹤鸣茶社</div><div class="tip">5 元盖碗茶 + 采耳，最地道的成都慢生活</div></div>
+        </div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chengdu_Kuanzhai_Alley.jpg/640px-Chengdu_Kuanzhai_Alley.jpg" alt="宽窄巷子" onerror="this.style.display='none'">🏘️<span class="tlabel">傍晚</span></div>
+          <div class="sc"><div class="act">🏘️ 宽窄巷子夜游</div><div class="tip">傍晚人少，历史街区，伴手礼选购</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D4 -->
     <div class="dc">
       <div class="dot">四</div>
       <div class="dh"><span class="ddate">9月20日（周日）</span><span class="dtitle">都江堰 · 青城山</span><span class="dtag">郊游</span></div>
       <div class="db">
-        <div class="sr"><div class="si">⛰️<span class="tlabel">全天</span></div><div class="sc"><div class="act">💧 都江堰 + ⛰️ 青城山</div><div class="tip">成灌快铁犀浦站出发约 40 分钟，两景区打车串联约 ¥60。青城山有超萌自拍熊猫！</div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Dujiangyan_Irrigation_System.jpg/640px-Dujiangyan_Irrigation_System.jpg" alt="都江堰" onerror="this.style.display='none'">⛰️<span class="tlabel">全天</span></div>
+          <div class="sc"><div class="act">💧 都江堰 + ⛰️ 青城山</div><div class="tip">成灌快铁犀浦站出发约 40 分钟，两景区打车串联约 ¥60。青城山有超萌自拍熊猫！</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D5 -->
     <div class="dc">
       <div class="dot">五</div>
       <div class="dh"><span class="ddate">9月21日（周一）</span><span class="dtitle">草堂 · 武侯祠 · 锦里</span><span class="dtag">人文</span></div>
       <div class="db">
-        <div class="sr"><div class="si">📜<span class="tlabel">上午</span></div><div class="sc"><div class="act">📜 杜甫草堂 → 浣花溪公园</div><div class="tip">初秋红墙黄叶诗意绝佳，打车约 15 分钟</div></div></div>
-        <div class="sr"><div class="si">🏮<span class="tlabel">下午</span></div><div class="sc"><div class="act">⚔️ 武侯祠 → 🏮 锦里夜景</div><div class="tip">草堂至武侯祠约 4km。锦里夜晚 8 点后最迷人。</div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Du_Fu_Thatched_Cottage_Chengdu_China.jpg/640px-Du_Fu_Thatched_Cottage_Chengdu_China.jpg" alt="杜甫草堂" onerror="this.style.display='none'">📜<span class="tlabel">上午</span></div>
+          <div class="sc"><div class="act">📜 杜甫草堂 → 浣花溪公园</div><div class="tip">初秋红墙黄叶诗意绝佳，打车约 15 分钟</div></div>
+        </div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Jinli_Street%2C_Chengdu.jpg/640px-Jinli_Street%2C_Chengdu.jpg" alt="锦里" onerror="this.style.display='none'">🏮<span class="tlabel">下午</span></div>
+          <div class="sc"><div class="act">⚔️ 武侯祠 → 🏮 锦里夜景</div><div class="tip">草堂至武侯祠约 4km。锦里夜晚 8 点后最迷人。</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D6 -->
     <div class="dc">
       <div class="dot">六</div>
       <div class="dh"><span class="ddate">9月22日（周二）</span><span class="dtitle">三星堆 · 古蜀文明</span><span class="dtag">震撼</span></div>
       <div class="db">
-        <div class="sr"><div class="si">🏺<span class="tlabel">全天</span></div><div class="sc"><div class="act">🏺 三星堆博物馆（广汉）</div><div class="tip">青铜神树、纵目面具，古蜀文明震撼首选。成都北站高铁约 20 分钟至广汉。</div><div class="bgs"><span class="tb m">⚠️ 提前5天官方小程序抢票！</span></div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Sanxingdui_Museum_01.jpg/640px-Sanxingdui_Museum_01.jpg" alt="三星堆" onerror="this.style.display='none'">🏺<span class="tlabel">全天</span></div>
+          <div class="sc"><div class="act">🏺 三星堆博物馆（广汉）</div><div class="tip">青铜神树、纵目面具，古蜀文明震撼首选。成都北站高铁约 20 分钟至广汉。</div><div class="bgs"><span class="tb m">⚠️ 提前5天官方小程序抢票！</span></div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D7 -->
     <div class="dc">
       <div class="dot">七</div>
       <div class="dh"><span class="ddate">9月23日（周三）</span><span class="dtitle">金沙遗址 · 玉林 Citywalk</span><span class="dtag">文艺烟火</span></div>
       <div class="db">
-        <div class="sr"><div class="si">☀️<span class="tlabel">上午</span></div><div class="sc"><div class="act">☀️ 金沙遗址博物馆</div><div class="tip">太阳神鸟金箔——中华文化遗产标志。打车约 15 分钟。</div></div></div>
-        <div class="sr" style="background:linear-gradient(135deg,#1a1209,#3d2b1a);grid-template-columns:1fr;min-height:auto"><div class="sc" style="padding:14px 20px"><div class="act" style="color:#D4A017;letter-spacing:1px">🚶 玉林 Citywalk 下午路线</div><div class="tip" style="color:rgba(255,255,255,.6)">地铁 3 号线至芳草街站 · 穿舒服的鞋 · 半天走完，想深逛一天不够</div></div></div>
-        <div class="sr"><div class="si" style="background:#f0ede6;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">📚<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站①</span></div><div class="sc"><div class="act">📚 玉洁巷 · 书店群</div><div class="tip">院子文化创意园、退步集旧书房、三联思想库 / 王笛街头书店——文艺气氛最浓的起点</div></div></div>
-        <div class="sr"><div class="si" style="background:#f5edf0;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">☕<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站②</span></div><div class="sc"><div class="act">☕ 芳草街 · 白夜花神诗空间</div><div class="tip">玉林咖啡最密集地带。白夜花神由诗人翟永明主理，集咖啡、酒吧、艺文活动于一体。</div></div></div>
-        <div class="sr"><div class="si" style="background:#edf3f0;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">🌴<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站③</span></div><div class="sc"><div class="act">🌴 华姿路 · 火烧堰碧翠廊</div><div class="tip">两排棕榈树宛如泰国，火烧堰文化巷道全长三四百米，还有"幻Photism"摄影艺术空间。</div></div></div>
-        <div class="sr"><div class="si" style="background:#f0f0ed;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">📖<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站④</span></div><div class="sc"><div class="act">📖 一苇书坊</div><div class="tip">成都独立书店代表，slogan"精神按摩"。坐在门外长凳看书发呆，是玉林最治愈的一角。</div></div></div>
-        <div class="sr"><div class="si" style="background:#f5ede8;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">🎸<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站⑤</span></div><div class="sc"><div class="act">🎸 玉林西路 · 小酒馆打卡</div><div class="tip">赵雷《成都》歌词地贴铺满地面，固定打卡相框。晚上排队拍照，人均消费约¥50。</div><div class="bgs"><span class="tb m">晚上人多，注意保管财物</span></div></div></div>
-        <div class="sr"><div class="si" style="background:#edf0e8;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.5;flex-direction:column">🥬<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 5px;border-radius:3px;margin-top:3px">站⑥</span></div><div class="sc"><div class="act">🥬 玉林横街 · 市井收尾</div><div class="tip">玉林菜市场与休闲中心，谈天喝茶打牌的本地居民随处可见。烤土豆、特色小吃——最接地气的收尾。</div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Jinsha_Site_Museum%2C_Chengdu.jpg/640px-Jinsha_Site_Museum%2C_Chengdu.jpg" alt="金沙遗址" onerror="this.style.display='none'">☀️<span class="tlabel">上午</span></div>
+          <div class="sc"><div class="act">☀️ 金沙遗址博物馆</div><div class="tip">太阳神鸟金箔——中华文化遗产标志。打车约 15 分钟。</div></div>
+        </div>
+        <div class="sr" style="background:linear-gradient(135deg,#1a1209,#3d2b1a);grid-template-columns:1fr;min-height:auto">
+          <div class="sc" style="padding:14px 20px"><div class="act" style="color:#D4A017;letter-spacing:1px">🚶 玉林 Citywalk 下午路线</div><div class="tip" style="color:rgba(255,255,255,.6)">地铁 3 号线至芳草街站 · 穿舒服的鞋 · 半天走完，想深逛一天不够</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#f0ede6;flex-direction:column;gap:4px;font-size:24px">📚<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站①</span></div>
+          <div class="sc"><div class="act">📚 玉洁巷 · 书店群</div><div class="tip">院子文化创意园、退步集旧书房、三联思想库 / 王笛街头书店——文艺气氛最浓的起点</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#f5edf0;flex-direction:column;gap:4px;font-size:24px">☕<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站②</span></div>
+          <div class="sc"><div class="act">☕ 芳草街 · 白夜花神诗空间</div><div class="tip">玉林咖啡最密集地带。白夜花神由诗人翟永明主理，集咖啡、酒吧、艺文活动于一体。</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#edf3f0;flex-direction:column;gap:4px;font-size:24px">🌴<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站③</span></div>
+          <div class="sc"><div class="act">🌴 华姿路 · 火烧堰碧翠廊</div><div class="tip">两排棕榈树宛如泰国，火烧堰文化巷道全长三四百米，还有"幻Photism"摄影艺术空间。</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#f0f0ed;flex-direction:column;gap:4px;font-size:24px">📖<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站④</span></div>
+          <div class="sc"><div class="act">📖 一苇书坊</div><div class="tip">成都独立书店代表，slogan"精神按摩"。坐在门外长凳看书发呆，是玉林最治愈的一角。</div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#f5ede8;flex-direction:column;gap:4px;font-size:24px">🎸<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站⑤</span></div>
+          <div class="sc"><div class="act">🎸 玉林西路 · 小酒馆打卡</div><div class="tip">赵雷《成都》歌词地贴铺满地面，固定打卡相框。晚上排队拍照，人均消费约¥50。</div><div class="bgs"><span class="tb m">晚上人多，注意保管财物</span></div></div>
+        </div>
+        <div class="sr">
+          <div class="si" style="background:#edf0e8;flex-direction:column;gap:4px;font-size:24px">🥬<span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站⑥</span></div>
+          <div class="sc"><div class="act">🥬 玉林横街 · 市井收尾</div><div class="tip">玉林菜市场与休闲中心，谈天喝茶打牌的本地居民随处可见。烤土豆、特色小吃——最接地气的收尾。</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- D8 -->
     <div class="dc">
       <div class="dot">八</div>
       <div class="dh"><span class="ddate">9月24日（周四）</span><span class="dtitle">文殊院 · SQ843 返程</span><span class="dtag">收尾</span></div>
       <div class="db">
-        <div class="sr"><div class="si">🕌<span class="tlabel">早上</span></div><div class="sc"><div class="act">🕌 文殊院抄经 · 素斋</div><div class="tip">千年古刹，红墙宫廷糕点，心灵收尾。步行约 20 分钟。</div></div></div>
-        <div class="sr"><div class="si">🛍️<span class="tlabel">中午</span></div><div class="sc"><div class="act">🛍️ 选购特产 · Check-out 12:00</div><div class="tip">郫县豆瓣、汉源花椒、熊猫文创。行李可寄存前台。</div></div></div>
-        <div class="sr"><div class="si">✈️<span class="tlabel">下午</span></div><div class="sc"><div class="act">✈️ 前往 TFU · SQ843 返新加坡</div><div class="tip">出发前 3h 前往机场（TFU T1），打车约 50 分钟（¥120–150）</div><div class="bgs"><span class="tb s">TFU T1 → 樟宜 T3</span></div></div></div>
+        <div class="sr">
+          <div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Wenshu_Monastery_Chengdu.jpg/640px-Wenshu_Monastery_Chengdu.jpg" alt="文殊院" onerror="this.style.display='none'">🕌<span class="tlabel">早上</span></div>
+          <div class="sc"><div class="act">🕌 文殊院抄经 · 素斋</div><div class="tip">千年古刹，红墙宫廷糕点，心灵收尾。步行约 20 分钟。</div></div>
+        </div>
+        <div class="sr">
+          <div class="si">🛍️<span class="tlabel">中午</span></div>
+          <div class="sc"><div class="act">🛍️ 选购特产 · Check-out 12:00</div><div class="tip">郫县豆瓣、汉源花椒、熊猫文创。行李可寄存前台。</div></div>
+        </div>
+        <div class="sr">
+          <div class="si">✈️<span class="tlabel">下午</span></div>
+          <div class="sc"><div class="act">✈️ 前往 TFU · SQ843 返新加坡</div><div class="tip">出发前 3h 前往机场（TFU T1），打车约 50 分钟（¥120–150）</div><div class="bgs"><span class="tb s">TFU T1 → 樟宜 T3</span></div></div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
+
 <hr class="div">
+
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:20px">🍜</span><h2>必吃美食清单</h2><div class="ln"></div></div>
   <div class="fg">
@@ -236,7 +330,9 @@
     <div class="fc"><div class="fi">🐰</div><div><h3>夜宵</h3><p>双流老妈兔头、奎星楼街脑花，成都夜宵是另一种信仰。</p></div></div>
   </div>
 </div>
+
 <hr class="div">
+
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:20px">💡</span><h2>出行锦囊</h2><div class="ln"></div></div>
   <div class="tg">
@@ -248,12 +344,14 @@
     <div class="tc"><h3>👟 天气与穿着</h3><p>20–28°C，备晴雨伞（华西秋雨），每天约 2 万步，平底鞋 + 薄外套标配。</p></div>
   </div>
 </div>
+
 <div class="outro">
   <blockquote>让我们烫起红锅，辣到微汗，<br>在这座永远不急不慢的城市里，<br>把每一天都过成"巴适得板"。</blockquote>
   <p class="auth">— SQ842 · 2026年9月17日 · 成都金秋之旅</p>
   <br><br>
   <span class="spice">🌶️ 请提前表态：中辣 还是 微辣？</span>
 </div>
+
 <script>
   const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('vis'),x.target.dataset.d||0);io.unobserve(x.target);}});},{threshold:.08});
   document.querySelectorAll('.dc,.fc,.tc').forEach((el,i)=>{el.dataset.d=(i%4)*90;io.observe(el);});
