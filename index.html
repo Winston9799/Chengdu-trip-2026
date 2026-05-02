@@ -78,10 +78,10 @@
 
 .sr{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid #f0e8d8;min-height:110px}
 .sr:last-child{border-bottom:none}
-.si{position:relative;overflow:hidden;background:var(–warm)}
-.si img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.si{position:relative;overflow:hidden;background:var(–warm);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(–muted)}
+.si img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .sr:hover .si img{transform:scale(1.07)}
-.tlabel{position:absolute;top:8px;left:0;background:var(–gold);color:#fff;font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:600}
+.tlabel{position:absolute;top:8px;left:0;background:var(–gold);color:#fff;font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:600;z-index:2}
 .sc{padding:14px 18px;display:flex;flex-direction:column;gap:3px}
 .sc .act{font-weight:600;font-size:14px}
 .sc .tip{font-size:12px;color:var(–muted);line-height:1.6}
@@ -113,9 +113,6 @@
 .outro .spice{display:inline-block;margin-top:36px;background:var(–red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
 
 hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 auto}
-
-/* fallback emoji bg for broken images */
-.si{display:flex;align-items:center;justify-content:center;font-size:32px;color:var(–muted)}
 
 @media(max-width:640px){
 .tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}
