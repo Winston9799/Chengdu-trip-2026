@@ -75,9 +75,9 @@
   .sc .act{font-weight:600;font-size:14px}
   .sc .tip{font-size:12px;color:var(--muted);line-height:1.6}
   .addr{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:3px;margin-top:2px;margin-bottom:2px;opacity:.8}
-  .b-strip{display:flex;gap:4px;margin-top:8px}
-  .b-strip img{width:56px;height:56px;object-fit:cover;border-radius:6px;cursor:pointer;transition:transform .2s,box-shadow .2s;border:2px solid transparent}
-  .b-strip img:hover{transform:scale(1.06);box-shadow:0 4px 12px rgba(0,0,0,.18);border-color:var(--gold)}
+  .b-strip{display:flex;gap:6px;margin-top:8px}
+  .b-strip img{width:80px;height:80px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .2s,box-shadow .2s;border:2px solid transparent;flex-shrink:0}
+  .b-strip img:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,.18);border-color:var(--gold)}
   .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:1000;align-items:center;justify-content:center}
   .lb.open{display:flex}
   .lb-close{position:fixed;top:18px;right:22px;color:#fff;font-size:28px;cursor:pointer;opacity:.65;line-height:1;z-index:1001}
@@ -314,6 +314,10 @@
   function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;lbRender();}
   function lbRender(){document.getElementById('lb-img').src=lbImgs[lbIdx];document.getElementById('lb-dots').innerHTML=lbImgs.map((_,i)=>`<div class="lb-dot${i===lbIdx?' on':''}" onclick="lbIdx=${i};lbRender()"></div>`).join('');}
   document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('open'))return;if(e.key==='ArrowLeft')lbNav(-1);else if(e.key==='ArrowRight')lbNav(1);else if(e.key==='Escape')closeLb();});
+  let _tx=0;
+  const _lb=document.getElementById('lb');
+  _lb.addEventListener('touchstart',e=>{_tx=e.touches[0].clientX;},{passive:true});
+  _lb.addEventListener('touchend',e=>{const d=_tx-e.changedTouches[0].clientX;if(Math.abs(d)>40){if(d>0)lbNav(1);else lbNav(-1);}});
 </script>
 </body>
 </html>
