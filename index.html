@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -10,122 +9,99 @@
   :root{--red:#C0392B;--gold:#D4A017;--ink:#1a1209;--cream:#FAF6EE;--warm:#F5ECD7;--muted:#8B7355;--border:#DDD0B8;--sq:#1B3A6B;--amap:#FF6B35}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans SC',sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;overflow-x:hidden}
-
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;background:#120c04;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#3d2b1a 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 20% 100%,#2a1f0e 0%,transparent 60%)}
-.ink{position:absolute;border-radius:50%;opacity:.06;animation:float 8s ease-in-out infinite}
-.ink:nth-child(1){width:600px;height:600px;top:-100px;right:-150px;background:var(–gold)}
-.ink:nth-child(2){width:400px;height:400px;bottom:-50px;left:-80px;background:var(–red);animation-delay:3s}
-.ink:nth-child(3){width:250px;height:250px;top:40%;left:5%;background:var(–gold);animation-delay:5s}
-@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.03)}}
-.vdeco{position:absolute;top:0;bottom:0;padding:40px 0;font-family:‘Noto Serif SC’,serif;font-size:11px;letter-spacing:4px;color:rgba(212,160,23,.3);writing-mode:vertical-rl;pointer-events:none}
-.vdeco.l{left:28px}.vdeco.r{right:28px}
-.eyebrow{font-size:11px;letter-spacing:6px;color:var(–gold);opacity:.8;margin-bottom:24px;position:relative;animation:fu 1s ease both}
-.hero h1{font-family:‘Noto Serif SC’,serif;font-size:clamp(48px,10vw,96px);font-weight:700;color:#fff;line-height:1.1;position:relative;animation:fu 1s .15s ease both}
-.hero h1 span{color:var(–gold);display:block}
-.hero p{margin-top:20px;font-size:clamp(13px,3vw,17px);color:rgba(255,255,255,.5);letter-spacing:2px;position:relative;animation:fu 1s .3s ease both}
-.pills{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;animation:fu 1s .45s ease both}
-.pill{background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.4);color:var(–gold);padding:8px 20px;border-radius:40px;font-size:13px;letter-spacing:2px}
-.scrollhint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:3px;animation:fu 1s .8s ease both}
-.sline{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);animation:sl 2s ease-in-out infinite}
-@keyframes sl{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-.fbanner{background:var(–sq);color:#fff}
-.finner{max-width:900px;margin:0 auto;padding:28px 24px;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
-.fleg{display:flex;flex-direction:column}
-.fleg.r{text-align:right}
-.fleg .sub{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.5);margin-bottom:6px}
-.fleg .num{font-family:‘Noto Serif SC’,serif;font-size:20px;font-weight:700}
-.fleg .rt{font-size:13px;color:rgba(255,255,255,.7);margin-top:2px}
-.fleg .tm{font-size:11px;color:rgba(255,255,255,.5);margin-top:4px}
-.fdiv{text-align:center;font-size:22px;opacity:.6}
-.fdiv span{display:block;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.3);margin-top:2px}
-
-.hstrip{background:#fff;border-bottom:1px solid var(–border)}
-.hinner{max-width:900px;margin:0 auto;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.hinfo h3{font-family:‘Noto Serif SC’,serif;font-size:16px;font-weight:700}
-.hinfo p{font-size:12px;color:var(–muted)}
-.hbadge{margin-left:auto;background:var(–warm);border:1px solid var(–border);color:var(–muted);font-size:11px;padding:6px 14px;border-radius:20px;white-space:nowrap}
-
-.abtn{display:inline-flex;align-items:center;gap:5px;background:var(–amap);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;text-decoration:none;font-weight:500;white-space:nowrap;transition:opacity .2s;margin-top:4px}
-.abtn:hover{opacity:.85}
-.abtn svg{width:12px;height:12px;fill:#fff;flex-shrink:0}
-.abtn.walk{background:#2d6a4f}
-.abtn.sq{background:var(–sq)}
-
-.ovw{background:var(–red);color:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));text-align:center}
-.ovw-i{padding:22px 12px;border-right:1px solid rgba(255,255,255,.15)}
-.ovw-i:last-child{border-right:none}
-.ovw-i .n{font-family:‘Noto Serif SC’,serif;font-size:30px;font-weight:700;line-height:1;margin-bottom:4px}
-.ovw-i .l{font-size:10px;letter-spacing:2px;opacity:.75}
-
-.sec{max-width:960px;margin:0 auto;padding:60px 24px}
-.sec-h{display:flex;align-items:center;gap:16px;margin-bottom:40px}
-.sec-h .ln{flex:1;height:1px;background:var(–border)}
-.sec-h h2{font-family:‘Noto Serif SC’,serif;font-size:22px;font-weight:700;white-space:nowrap;letter-spacing:2px}
-
-.tl{position:relative}
-.tl::before{content:’’;position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(–gold),var(–border),transparent)}
-.dc{position:relative;padding:0 0 44px 72px;opacity:0;transform:translateX(-16px);transition:all .55s ease}
-.dc.vis{opacity:1;transform:translateX(0)}
-.dot{position:absolute;left:16px;top:6px;width:24px;height:24px;border-radius:50%;background:var(–cream);border:2px solid var(–gold);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:var(–gold);z-index:1}
-.dh{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
-.ddate{font-family:‘Noto Serif SC’,serif;font-size:13px;color:var(–red);letter-spacing:1px;font-weight:600}
-.dtitle{font-family:‘Noto Serif SC’,serif;font-size:20px;font-weight:700}
-.dtag{font-size:10px;letter-spacing:2px;padding:3px 10px;border-radius:20px;border:1px solid var(–border);color:var(–muted)}
-.db{background:#fff;border-radius:14px;border:1px solid var(–border);overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.05)}
-
-.sr{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid #f0e8d8;min-height:110px}
-.sr:last-child{border-bottom:none}
-.si{position:relative;overflow:hidden;background:var(–warm);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(–muted)}
-.si img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.sr:hover .si img{transform:scale(1.07)}
-.tlabel{position:absolute;top:8px;left:0;background:var(–gold);color:#fff;font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:600;z-index:2}
-.sc{padding:14px 18px;display:flex;flex-direction:column;gap:3px}
-.sc .act{font-weight:600;font-size:14px}
-.sc .tip{font-size:12px;color:var(–muted);line-height:1.6}
-.bgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.tb{display:inline-block;background:#FFF3CD;color:#856404;font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid #FFEEBA}
-.tb.m{background:#FDECEA;color:var(–red);border-color:#FAC5C0}
-.tb.s{background:#EEF2FF;color:var(–sq);border-color:#C7D2FE}
-
-.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.fc{background:#fff;border:1px solid var(–border);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(16px);transition:all .4s ease}
-.fc.vis{opacity:1;transform:translateY(0)}
-.fc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.fi{font-size:28px;flex-shrink:0}
-.fc h3{font-family:‘Noto Serif SC’,serif;font-size:15px;font-weight:700;margin-bottom:4px}
-.fc p{font-size:12px;color:var(–muted);line-height:1.6}
-
-.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.tc{background:#fff;border:1px solid var(–border);border-radius:12px;padding:22px;border-left:3px solid var(–gold);opacity:0;transform:translateY(16px);transition:all .4s ease}
-.tc.vis{opacity:1;transform:translateY(0)}
-.tc h3{font-family:‘Noto Serif SC’,serif;font-size:14px;font-weight:700;margin-bottom:8px}
-.tc p,.tc li{font-size:13px;color:var(–muted);line-height:1.7}
-.tc ul{padding-left:16px}
-
-.outro{background:var(–ink);color:#fff;text-align:center;padding:80px 24px;position:relative;overflow:hidden}
-.outro::before{content:‘成都’;position:absolute;font-family:‘Noto Serif SC’,serif;font-size:200px;font-weight:700;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
-.outro blockquote{position:relative;max-width:560px;margin:0 auto;font-family:‘Noto Serif SC’,serif;font-size:clamp(16px,3vw,22px);line-height:1.9;color:rgba(255,255,255,.85)}
-.outro blockquote::before{content:‘❝’;display:block;font-size:40px;color:var(–gold);opacity:.6;margin-bottom:16px;line-height:1}
-.outro .auth{margin-top:28px;font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.3)}
-.outro .spice{display:inline-block;margin-top:36px;background:var(–red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
-
-hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 auto}
-
-@media(max-width:640px){
-.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}
-.vdeco{display:none}
-.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}
-.sr{grid-template-columns:90px 1fr}
-.hinner{flex-direction:column}.hbadge{margin-left:0}
-}
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;background:#120c04;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#3d2b1a 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 20% 100%,#2a1f0e 0%,transparent 60%)}
+  .ink{position:absolute;border-radius:50%;opacity:.06;animation:float 8s ease-in-out infinite}
+  .ink:nth-child(1){width:600px;height:600px;top:-100px;right:-150px;background:var(--gold)}
+  .ink:nth-child(2){width:400px;height:400px;bottom:-50px;left:-80px;background:var(--red);animation-delay:3s}
+  .ink:nth-child(3){width:250px;height:250px;top:40%;left:5%;background:var(--gold);animation-delay:5s}
+  @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.03)}}
+  .vdeco{position:absolute;top:0;bottom:0;padding:40px 0;font-family:'Noto Serif SC',serif;font-size:11px;letter-spacing:4px;color:rgba(212,160,23,.3);writing-mode:vertical-rl;pointer-events:none}
+  .vdeco.l{left:28px}.vdeco.r{right:28px}
+  .eyebrow{font-size:11px;letter-spacing:6px;color:var(--gold);opacity:.8;margin-bottom:24px;position:relative;animation:fu 1s ease both}
+  .hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(48px,10vw,96px);font-weight:700;color:#fff;line-height:1.1;position:relative;animation:fu 1s .15s ease both}
+  .hero h1 span{color:var(--gold);display:block}
+  .hero p{margin-top:20px;font-size:clamp(13px,3vw,17px);color:rgba(255,255,255,.5);letter-spacing:2px;position:relative;animation:fu 1s .3s ease both}
+  .pills{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;animation:fu 1s .45s ease both}
+  .pill{background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.4);color:var(--gold);padding:8px 20px;border-radius:40px;font-size:13px;letter-spacing:2px}
+  .scrollhint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:3px;animation:fu 1s .8s ease both}
+  .sline{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);animation:sl 2s ease-in-out infinite}
+  @keyframes sl{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  @keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .fbanner{background:var(--sq);color:#fff}
+  .finner{max-width:900px;margin:0 auto;padding:28px 24px;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
+  .fleg{display:flex;flex-direction:column}.fleg.r{text-align:right}
+  .fleg .sub{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.5);margin-bottom:6px}
+  .fleg .num{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700}
+  .fleg .rt{font-size:13px;color:rgba(255,255,255,.7);margin-top:2px}
+  .fleg .tm{font-size:11px;color:rgba(255,255,255,.5);margin-top:4px}
+  .fdiv{text-align:center;font-size:22px;opacity:.6}
+  .fdiv span{display:block;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.3);margin-top:2px}
+  .hstrip{background:#fff;border-bottom:1px solid var(--border)}
+  .hinner{max-width:900px;margin:0 auto;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .hinfo h3{font-family:'Noto Serif SC',serif;font-size:16px;font-weight:700}
+  .hinfo p{font-size:12px;color:var(--muted)}
+  .hbadge{margin-left:auto;background:var(--warm);border:1px solid var(--border);color:var(--muted);font-size:11px;padding:6px 14px;border-radius:20px;white-space:nowrap}
+  .abtn{display:inline-flex;align-items:center;gap:5px;background:var(--amap);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;text-decoration:none;font-weight:500;white-space:nowrap;transition:opacity .2s;margin-top:4px}
+  .abtn:hover{opacity:.85}
+  .abtn svg{width:12px;height:12px;fill:#fff;flex-shrink:0}
+  .abtn.walk{background:#2d6a4f}
+  .ovw{background:var(--red);color:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));text-align:center}
+  .ovw-i{padding:22px 12px;border-right:1px solid rgba(255,255,255,.15)}
+  .ovw-i:last-child{border-right:none}
+  .ovw-i .n{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;line-height:1;margin-bottom:4px}
+  .ovw-i .l{font-size:10px;letter-spacing:2px;opacity:.75}
+  .sec{max-width:960px;margin:0 auto;padding:60px 24px}
+  .sec-h{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+  .sec-h .ln{flex:1;height:1px;background:var(--border)}
+  .sec-h h2{font-family:'Noto Serif SC',serif;font-size:22px;font-weight:700;white-space:nowrap;letter-spacing:2px}
+  .tl{position:relative}
+  .tl::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),var(--border),transparent)}
+  .dc{position:relative;padding:0 0 44px 72px;opacity:0;transform:translateX(-16px);transition:all .55s ease}
+  .dc.vis{opacity:1;transform:translateX(0)}
+  .dot{position:absolute;left:16px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--cream);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:var(--gold);z-index:1}
+  .dh{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+  .ddate{font-family:'Noto Serif SC',serif;font-size:13px;color:var(--red);letter-spacing:1px;font-weight:600}
+  .dtitle{font-family:'Noto Serif SC',serif;font-size:20px;font-weight:700}
+  .dtag{font-size:10px;letter-spacing:2px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted)}
+  .db{background:#fff;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+  .sr{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid #f0e8d8;min-height:110px}
+  .sr:last-child{border-bottom:none}
+  .si{position:relative;overflow:hidden;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--muted)}
+  .si img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .sr:hover .si img{transform:scale(1.07)}
+  .tlabel{position:absolute;top:8px;left:0;background:var(--gold);color:#fff;font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:600;z-index:2}
+  .sc{padding:14px 18px;display:flex;flex-direction:column;gap:3px}
+  .sc .act{font-weight:600;font-size:14px}
+  .sc .tip{font-size:12px;color:var(--muted);line-height:1.6}
+  .bgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .tb{display:inline-block;background:#FFF3CD;color:#856404;font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid #FFEEBA}
+  .tb.m{background:#FDECEA;color:var(--red);border-color:#FAC5C0}
+  .tb.s{background:#EEF2FF;color:var(--sq);border-color:#C7D2FE}
+  .fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .fc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(16px);transition:all .4s ease}
+  .fc.vis{opacity:1;transform:translateY(0)}
+  .fc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  .fi{font-size:28px;flex-shrink:0}
+  .fc h3{font-family:'Noto Serif SC',serif;font-size:15px;font-weight:700;margin-bottom:4px}
+  .fc p{font-size:12px;color:var(--muted);line-height:1.6}
+  .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .tc{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;border-left:3px solid var(--gold);opacity:0;transform:translateY(16px);transition:all .4s ease}
+  .tc.vis{opacity:1;transform:translateY(0)}
+  .tc h3{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;margin-bottom:8px}
+  .tc p,.tc li{font-size:13px;color:var(--muted);line-height:1.7}
+  .tc ul{padding-left:16px}
+  .outro{background:var(--ink);color:#fff;text-align:center;padding:80px 24px;position:relative;overflow:hidden}
+  .outro::before{content:'成都';position:absolute;font-family:'Noto Serif SC',serif;font-size:200px;font-weight:700;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+  .outro blockquote{position:relative;max-width:560px;margin:0 auto;font-family:'Noto Serif SC',serif;font-size:clamp(16px,3vw,22px);line-height:1.9;color:rgba(255,255,255,.85)}
+  .outro blockquote::before{content:'❝';display:block;font-size:40px;color:var(--gold);opacity:.6;margin-bottom:16px;line-height:1}
+  .outro .auth{margin-top:28px;font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.3)}
+  .outro .spice{display:inline-block;margin-top:36px;background:var(--red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
+  hr.div{border:none;border-top:1px solid var(--border);max-width:960px;margin:0 auto}
+  @media(max-width:640px){.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}.vdeco{display:none}.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}.sr{grid-template-columns:90px 1fr}.hinner{flex-direction:column}.hbadge{margin-left:0}}
 </style>
-
 </head>
 <body>
-
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="ink"></div><div class="ink"></div><div class="ink"></div>
@@ -152,7 +128,6 @@ hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 
   </div>
   <div class="scrollhint"><div class="sline"></div><span>向下滑动</span></div>
 </section>
-
 <div class="fbanner">
   <div class="finner">
     <div class="fleg">
@@ -161,7 +136,7 @@ hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 
       <span class="rt">🇸🇬 SIN T3 → 🇨🇳 TFU T1</span>
       <span class="tm">9月17日 · 12:25 → 17:10 · 约 4h 45m</span>
     </div>
-    <div class="fdiv">✈<span>B737 MAX 8</span></div>
+    <div class="fdiv">✈<span>直飞</span></div>
     <div class="fleg r">
       <span class="sub">SINGAPORE AIRLINES · 返程</span>
       <span class="num">SQ 843</span>
@@ -170,22 +145,16 @@ hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 
     </div>
   </div>
 </div>
-
 <div class="hstrip">
   <div class="hinner">
     <div style="font-size:26px">🏨</div>
     <div class="hinfo">
       <h3>JW Marriott Hotel Chengdu · 成都茂业JW万豪酒店</h3>
       <p>锦江区东御街19号 · 9月17–24日（7晚）· Check-in 14:00 · Check-out 12:00</p>
-      <a class="abtn" href="https://uri.amap.com/navigation?to=104.068,30.657,JW万豪酒店成都&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        高德导航到酒店
-      </a>
     </div>
     <span class="hbadge">⭐ 五星 · 春熙路 1.3km</span>
   </div>
 </div>
-
 <div class="ovw">
   <div class="ovw-i"><div class="n">8</div><div class="l">天 · 行程</div></div>
   <div class="ovw-i"><div class="n">7</div><div class="l">晚 · JW Marriott</div></div>
@@ -193,444 +162,108 @@ hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 
   <div class="ovw-i"><div class="n">20°</div><div class="l">早晚凉爽</div></div>
   <div class="ovw-i"><div class="n">🐼</div><div class="l">国宝必看</div></div>
 </div>
-
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:22px">🗺️</span><h2>每日行程</h2><div class="ln"></div></div>
   <div class="tl">
-
-```
-<!-- D1 -->
-<div class="dc">
-  <div class="dot">一</div>
-  <div class="dh"><span class="ddate">9月17日（周四）</span><span class="dtitle">飞抵成都 · 初见繁华</span><span class="dtag">轻松</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Changi_Airport_T3_Interior.jpg/640px-Changi_Airport_T3_Interior.jpg" alt="樟宜机场" onerror="this.parentNode.innerHTML='✈️'">
-        <span class="tlabel">中午</span>
-      </div>
-      <div class="sc">
-        <div class="act">✈️ SQ842 · 新加坡樟宜 T3 起飞</div>
-        <div class="tip">12:25 起飞，约 17:10 抵达成都天府机场 T1，飞行 4h 45m</div>
-        <div class="bgs"><span class="tb s">提前 2.5h 到达 Changi T3</span></div>
+    <div class="dc">
+      <div class="dot">一</div>
+      <div class="dh"><span class="ddate">9月17日（周四）</span><span class="dtitle">飞抵成都 · 初见繁华</span><span class="dtag">轻松</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Changi_Airport_T3_Interior.jpg/640px-Changi_Airport_T3_Interior.jpg" alt="" onerror="this.style.display='none'"><span class="tlabel">中午</span></div><div class="sc"><div class="act">✈️ SQ842 樟宜 T3 起飞</div><div class="tip">12:25 起飞，约 17:10 抵达成都天府机场 T1，飞行 4h 45m</div><div class="bgs"><span class="tb s">提前 2.5h 到达 Changi T3</span></div></div></div>
+        <div class="sr"><div class="si">🏨<span class="tlabel">傍晚</span></div><div class="sc"><div class="act">🏨 入住 JW Marriott Chengdu</div><div class="tip">机场至酒店约 50km，打车约 50 分钟（¥120–150），或预订酒店商务车 ¥300</div></div></div>
+        <div class="sr"><div class="si" style="background:#f5f0e8">🍄<span class="tlabel">晚餐</span></div><div class="sc"><div class="act">🍄 爱尚菌·云南野生菌火锅（春熙路太古里店）</div><div class="tip">东大街香槟广场3楼，步行约15分钟。菌子季9月食材最新鲜，清鲜汤底暖胃，完美第一晚。人均约¥104。</div><div class="bgs"><span class="tb" style="background:#FFF8E7;color:#7B5E00;border-color:#F0D080;">🍄 旺季建议提前大众点评预约</span></div></div></div>
+        <div class="sr"><div class="si">🐼<span class="tlabel">夜晚</span></div><div class="sc"><div class="act">🐼 IFS 爬墙熊猫 → 远洋太古里</div><div class="tip">饭后步行约 5 分钟，裸眼 3D 大屏打卡圣地</div></div></div>
       </div>
     </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d1/f2/4a/exterior.jpg?w=400&h=300&s=1" alt="JW Marriott" onerror="this.parentNode.innerHTML='🏨'">
-        <span class="tlabel">傍晚</span>
-      </div>
-      <div class="sc">
-        <div class="act">🏨 入住 JW Marriott Chengdu</div>
-        <div class="tip">机场至酒店约 50km，打车约 50 分钟（¥120–150），或预订酒店商务车 ¥300</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.068,30.657,JW万豪酒店成都&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>打车到酒店</a>
-        </div>
+    <div class="dc">
+      <div class="dot">二</div>
+      <div class="dh"><span class="ddate">9月18日（周五）</span><span class="dtitle">国宝熊猫 · 东郊记忆</span><span class="dtag">必去</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Giant_Panda_at_Chengdu_Research_Base.jpg/640px-Giant_Panda_at_Chengdu_Research_Base.jpg" alt="" onerror="this.style.display='none'">🐼<span class="tlabel">早上</span></div><div class="sc"><div class="act">🐼 成都大熊猫繁育研究基地</div><div class="tip">8:00 前入园，上午熊猫最活跃。打车约 20 分钟。</div><div class="bgs"><span class="tb m">⚠️ 提前14天公众号预约</span></div></div></div>
+        <div class="sr"><div class="si">🎨<span class="tlabel">下午</span></div><div class="sc"><div class="act">🎨 东郊记忆文创园</div><div class="tip">旧工厂改造文艺街区，壁画打卡、手冲咖啡</div></div></div>
       </div>
     </div>
-    <div class="sr">
-      <div class="si">
-        <span style="font-size:48px;display:flex;align-items:center;justify-content:center;height:100%;background:#f0ede6;">🍄</span>
-        <span class="tlabel">晚餐</span>
-      </div>
-      <div class="sc">
-        <div class="act">🍄 爱尚菌·云南野生菌火锅（春熙路太古里店）</div>
-        <div class="tip">东大街香槟广场3楼，步行约15分钟。菌子季9月食材最新鲜！清鲜汤底暖胃，完美的第一晚。人均约¥104。</div>
-        <div class="bgs">
-          <span class="tb" style="background:#FFF8E7;color:#7B5E00;border-color:#F0D080;">🍄 9月正值菌子季旺季，建议提前大众点评预约</span>
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0824,30.6549,香槟广场&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
+    <div class="dc">
+      <div class="dot">三</div>
+      <div class="dh"><span class="ddate">9月19日（周六）</span><span class="dtitle">博物馆 · 茶馆 · 宽窄巷 · 嘉嘉</span><span class="dtag">文化</span></div>
+      <div class="db">
+        <div class="sr"><div class="si">🏛️<span class="tlabel">上午</span></div><div class="sc"><div class="act">🏛️ 成都博物馆</div><div class="tip">步行约 10 分钟，免费，需公众号预约</div><div class="bgs"><span class="tb m">周一闭馆</span></div></div></div>
+        <div class="sr"><div class="si">🍵<span class="tlabel">下午</span></div><div class="sc"><div class="act">🍵 人民公园 · 鹤鸣茶社</div><div class="tip">5 元盖碗茶 + 采耳，最地道的成都慢生活</div></div></div>
+        <div class="sr"><div class="si">🏘️<span class="tlabel">傍晚</span></div><div class="sc"><div class="act">🏘️ 宽窄巷子夜游</div><div class="tip">傍晚人少，历史街区，伴手礼选购</div></div></div>
+        <div class="sr"><div class="si" style="background:#fef0f5;flex-direction:column;gap:4px">🥂<span class="tlabel">晚上</span></div><div class="sc"><div class="act">🥂 与嘉嘉聚餐</div><div class="tip">久别重逢！嘉嘉是成都本地人，地道餐厅由她来定，跟着本地人吃才是真正的成都味。</div><div class="bgs"><span class="tb" style="background:#FEE2F0;color:#9D174D;border-color:#FBCFE8;">👧 本地朋友带路</span></div></div></div>
       </div>
     </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Chengdu_IFS_Giant_Panda_Climbing_Building.jpg/640px-Chengdu_IFS_Giant_Panda_Climbing_Building.jpg" alt="IFS熊猫" onerror="this.parentNode.innerHTML='🐼'">
-        <span class="tlabel">夜晚</span>
-      </div>
-      <div class="sc">
-        <div class="act">🐼 IFS 爬墙熊猫 → 远洋太古里</div>
-        <div class="tip">饭后散步约5分钟即达，裸眼 3D 大屏打卡圣地</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0817,30.6546,成都IFS&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
+    <div class="dc">
+      <div class="dot">四</div>
+      <div class="dh"><span class="ddate">9月20日（周日）</span><span class="dtitle">都江堰 · 青城山</span><span class="dtag">郊游</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Dujiangyan_Irrigation_System.jpg/640px-Dujiangyan_Irrigation_System.jpg" alt="" onerror="this.style.display='none'">⛰️<span class="tlabel">全天</span></div><div class="sc"><div class="act">💧 都江堰 + ⛰️ 青城山</div><div class="tip">成灌快铁犀浦站出发约 40 分钟，两景区打车串联约 ¥60。青城山有超萌自拍熊猫！</div></div></div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- D2 -->
-<div class="dc">
-  <div class="dot">二</div>
-  <div class="dh"><span class="ddate">9月18日（周五）</span><span class="dtitle">国宝熊猫 · 东郊记忆</span><span class="dtag">必去</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Giant_Panda_at_Chengdu_Research_Base.jpg/640px-Giant_Panda_at_Chengdu_Research_Base.jpg" alt="熊猫基地" onerror="this.parentNode.innerHTML='🐼'">
-        <span class="tlabel">早上</span>
-      </div>
-      <div class="sc">
-        <div class="act">🐼 成都大熊猫繁育研究基地</div>
-        <div class="tip">8:00 前入园，上午熊猫最活跃。打车约 20 分钟。</div>
-        <div class="bgs">
-          <span class="tb m">⚠️ 提前14天公众号预约</span>
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.1469,30.7373,成都大熊猫繁育研究基地&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
+    <div class="dc">
+      <div class="dot">五</div>
+      <div class="dh"><span class="ddate">9月21日（周一）</span><span class="dtitle">草堂 · 武侯祠 · 锦里</span><span class="dtag">人文</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Du_Fu_Thatched_Cottage_Chengdu_China.jpg/640px-Du_Fu_Thatched_Cottage_Chengdu_China.jpg" alt="" onerror="this.style.display='none'">📜<span class="tlabel">上午</span></div><div class="sc"><div class="act">📜 杜甫草堂 → 浣花溪公园</div><div class="tip">初秋红墙黄叶诗意绝佳，打车约 15 分钟</div></div></div>
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Jinli_Street%2C_Chengdu.jpg/640px-Jinli_Street%2C_Chengdu.jpg" alt="" onerror="this.style.display='none'">🏮<span class="tlabel">下午</span></div><div class="sc"><div class="act">⚔️ 武侯祠 → 🏮 锦里夜景</div><div class="tip">草堂至武侯祠约 4km。锦里夜晚 8 点后最迷人。</div></div></div>
       </div>
     </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Chengdu_Eastern_Suburb_Memory_01.jpg/640px-Chengdu_Eastern_Suburb_Memory_01.jpg" alt="东郊记忆" onerror="this.parentNode.innerHTML='🎨'">
-        <span class="tlabel">下午</span>
+    <div class="dc">
+      <div class="dot">六</div>
+      <div class="dh"><span class="ddate">9月22日（周二）</span><span class="dtitle">三星堆 · 古蜀文明</span><span class="dtag">震撼</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Sanxingdui_Museum_01.jpg/640px-Sanxingdui_Museum_01.jpg" alt="" onerror="this.style.display='none'">🏺<span class="tlabel">全天</span></div><div class="sc"><div class="act">🏺 三星堆博物馆（广汉）</div><div class="tip">青铜神树、纵目面具，古蜀文明震撼首选。成都北站高铁约 20 分钟至广汉。</div><div class="bgs"><span class="tb m">⚠️ 提前5天官方小程序抢票！</span></div></div></div>
       </div>
-      <div class="sc">
-        <div class="act">🎨 东郊记忆文创园</div>
-        <div class="tip">旧工厂改造文艺街区，壁画打卡、手冲咖啡</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.1237,30.6678,东郊记忆&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
+    </div>
+    <div class="dc">
+      <div class="dot">七</div>
+      <div class="dh"><span class="ddate">9月23日（周三）</span><span class="dtitle">金沙遗址 · 玉林 Citywalk</span><span class="dtag">文艺烟火</span></div>
+      <div class="db">
+        <div class="sr"><div class="si">☀️<span class="tlabel">上午</span></div><div class="sc"><div class="act">☀️ 金沙遗址博物馆</div><div class="tip">太阳神鸟金箔——中华文化遗产标志。打车约 15 分钟。</div></div></div>
+        <div class="sr" style="background:linear-gradient(135deg,#1a1209,#3d2b1a);grid-template-columns:1fr;min-height:auto"><div class="sc" style="padding:14px 20px"><div class="act" style="color:#D4A017;letter-spacing:1px">🚶 玉林 Citywalk 下午路线</div><div class="tip" style="color:rgba(255,255,255,.6)">地铁 3 号线至芳草街站 · 穿舒服的鞋 · 半天走完，想深逛一天不够</div></div></div>
+        <div class="sr"><div class="si" style="background:#f0ede6;flex-direction:column;gap:4px;font-size:22px">📚<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站①</span></div><div class="sc"><div class="act">📚 玉洁巷 · 书店群</div><div class="tip">院子文化创意园、退步集旧书房、三联思想库 / 王笛街头书店——文艺气氛最浓的起点</div></div></div>
+        <div class="sr"><div class="si" style="background:#f5edf0;flex-direction:column;gap:4px;font-size:22px">☕<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站②</span></div><div class="sc"><div class="act">☕ 芳草街 · 白夜花神诗空间</div><div class="tip">玉林咖啡最密集地带。白夜花神由诗人翟永明主理，集咖啡、酒吧、艺文活动于一体。</div></div></div>
+        <div class="sr"><div class="si" style="background:#edf3f0;flex-direction:column;gap:4px;font-size:22px">🌴<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站③</span></div><div class="sc"><div class="act">🌴 华姿路 · 火烧堰碧翠廊</div><div class="tip">两排棕榈树宛如泰国，火烧堰文化巷道全长三四百米，还有"幻Photism"摄影艺术空间。</div></div></div>
+        <div class="sr"><div class="si" style="background:#f0f0ed;flex-direction:column;gap:4px;font-size:22px">📖<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站④</span></div><div class="sc"><div class="act">📖 一苇书坊</div><div class="tip">成都独立书店代表，slogan"精神按摩"。坐在门外长凳看书发呆，是玉林最治愈的一角。</div></div></div>
+        <div class="sr"><div class="si" style="background:#f5ede8;flex-direction:column;gap:4px;font-size:22px">🎸<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站⑤</span></div><div class="sc"><div class="act">🎸 玉林西路 · 小酒馆打卡</div><div class="tip">赵雷《成都》歌词地贴铺满地面，固定打卡相框。晚上排队拍照，人均消费约¥50。</div><div class="bgs"><span class="tb m">晚上人多，注意保管财物</span></div></div></div>
+        <div class="sr"><div class="si" style="background:#edf0e8;flex-direction:column;gap:4px;font-size:22px">🥬<br><span style="font-size:9px;background:var(--gold);color:#fff;padding:1px 6px;border-radius:3px">站⑥</span></div><div class="sc"><div class="act">🥬 玉林横街 · 市井收尾</div><div class="tip">玉林菜市场与休闲中心，谈天喝茶打牌的本地居民随处可见。烤土豆、特色小吃——最接地气的收尾。</div></div></div>
+      </div>
+    </div>
+    <div class="dc">
+      <div class="dot">八</div>
+      <div class="dh"><span class="ddate">9月24日（周四）</span><span class="dtitle">文殊院 · SQ843 返程</span><span class="dtag">收尾</span></div>
+      <div class="db">
+        <div class="sr"><div class="si"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Wenshu_Monastery_Chengdu.jpg/640px-Wenshu_Monastery_Chengdu.jpg" alt="" onerror="this.style.display='none'">🕌<span class="tlabel">早上</span></div><div class="sc"><div class="act">🕌 文殊院抄经 · 素斋</div><div class="tip">千年古刹，红墙宫廷糕点，心灵收尾。步行约 20 分钟。</div></div></div>
+        <div class="sr"><div class="si">🛍️<span class="tlabel">中午</span></div><div class="sc"><div class="act">🛍️ 选购特产 · Check-out 12:00</div><div class="tip">郫县豆瓣、汉源花椒、熊猫文创。行李可寄存前台。</div></div></div>
+        <div class="sr"><div class="si">✈️<span class="tlabel">下午</span></div><div class="sc"><div class="act">✈️ 前往 TFU · SQ843 返新加坡</div><div class="tip">出发前 3h 前往机场（TFU T1），打车约 50 分钟（¥120–150）</div><div class="bgs"><span class="tb s">TFU T1 → 樟宜 T3</span></div></div></div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- D3 -->
-<div class="dc">
-  <div class="dot">三</div>
-  <div class="dh"><span class="ddate">9月19日（周六）</span><span class="dtitle">博物馆 · 茶馆 · 宽窄巷</span><span class="dtag">文化</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Chengdu_Museum_new_building.jpg/640px-Chengdu_Museum_new_building.jpg" alt="成都博物馆" onerror="this.parentNode.innerHTML='🏛️'">
-        <span class="tlabel">上午</span>
-      </div>
-      <div class="sc">
-        <div class="act">🏛️ 成都博物馆</div>
-        <div class="tip">步行约 10 分钟，免费，需公众号预约</div>
-        <div class="bgs">
-          <span class="tb m">周一闭馆</span>
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0624,30.6598,成都博物馆&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Heming_Teahouse_Chengdu.jpg/640px-Heming_Teahouse_Chengdu.jpg" alt="鹤鸣茶社" onerror="this.parentNode.innerHTML='🍵'">
-        <span class="tlabel">下午</span>
-      </div>
-      <div class="sc">
-        <div class="act">🍵 人民公园 · 鹤鸣茶社</div>
-        <div class="tip">5 元盖碗茶 + 采耳，最地道的成都慢生活</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0581,30.6651,鹤鸣茶社&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
-      </div>
-    </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chengdu_Kuanzhai_Alley.jpg/640px-Chengdu_Kuanzhai_Alley.jpg" alt="宽窄巷子" onerror="this.parentNode.innerHTML='🏘️'">
-        <span class="tlabel">傍晚</span>
-      </div>
-      <div class="sc">
-        <div class="act">🏘️ 宽窄巷子夜游</div>
-        <div class="tip">傍晚人少，历史街区，伴手礼选购</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0512,30.6709,宽窄巷子&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
-      </div>
-    </div>
-    <div class="sr">
-      <div class="si" style="background:#fef0f5;flex-direction:column;gap:4px">
-        <span style="font-size:28px">🥂</span>
-        <span class="tlabel">晚上</span>
-      </div>
-      <div class="sc">
-        <div class="act">🥂 与嘉嘉聚餐</div>
-        <div class="tip">久别重逢！嘉嘉是成都本地人，地道餐厅由她来定，跟着本地人吃才是真正的成都味。</div>
-        <div class="bgs">
-          <span class="tb" style="background:#FEE2F0;color:#9D174D;border-color:#FBCFE8;">👧 本地朋友带路</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- D4 -->
-<div class="dc">
-  <div class="dot">四</div>
-  <div class="dh"><span class="ddate">9月20日（周日）</span><span class="dtitle">都江堰 · 青城山</span><span class="dtag">郊游</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Dujiangyan_Irrigation_System.jpg/640px-Dujiangyan_Irrigation_System.jpg" alt="都江堰" onerror="this.parentNode.innerHTML='💧'">
-        <span class="tlabel">全天</span>
-      </div>
-      <div class="sc">
-        <div class="act">💧 都江堰 + ⛰️ 青城山</div>
-        <div class="tip">成灌快铁犀浦站出发约 40 分钟，两景区打车串联约 ¥60</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=103.6175,30.9993,都江堰景区&mode=transit&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>都江堰导航</a>
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=103.5715,30.9000,青城山景区&mode=transit&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>青城山导航</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- D5 -->
-<div class="dc">
-  <div class="dot">五</div>
-  <div class="dh"><span class="ddate">9月21日（周一）</span><span class="dtitle">草堂 · 武侯祠 · 锦里</span><span class="dtag">人文</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Du_Fu_Thatched_Cottage_Chengdu_China.jpg/640px-Du_Fu_Thatched_Cottage_Chengdu_China.jpg" alt="杜甫草堂" onerror="this.parentNode.innerHTML='📜'">
-        <span class="tlabel">上午</span>
-      </div>
-      <div class="sc">
-        <div class="act">📜 杜甫草堂 → 浣花溪公园</div>
-        <div class="tip">初秋红墙黄叶诗意绝佳，打车约 15 分钟</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0403,30.6706,杜甫草堂&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
-      </div>
-    </div>
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Jinli_Street%2C_Chengdu.jpg/640px-Jinli_Street%2C_Chengdu.jpg" alt="锦里" onerror="this.parentNode.innerHTML='🏮'">
-        <span class="tlabel">下午</span>
-      </div>
-      <div class="sc">
-        <div class="act">⚔️ 武侯祠 → 🏮 锦里夜景</div>
-        <div class="tip">草堂至武侯祠约 4km。锦里夜晚 8 点后最迷人。</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0467,30.6434,武侯祠博物馆&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>武侯祠</a>
-          <a class="abtn" style="background:var(--red)" href="https://uri.amap.com/navigation?to=104.0473,30.6428,锦里古街&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>锦里</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- D6 -->
-<div class="dc">
-  <div class="dot">六</div>
-  <div class="dh"><span class="ddate">9月22日（周二）</span><span class="dtitle">三星堆 · 古蜀文明</span><span class="dtag">震撼</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Sanxingdui_Museum_01.jpg/640px-Sanxingdui_Museum_01.jpg" alt="三星堆" onerror="this.parentNode.innerHTML='🏺'">
-        <span class="tlabel">全天</span>
-      </div>
-      <div class="sc">
-        <div class="act">🏺 三星堆博物馆（广汉）</div>
-        <div class="tip">青铜神树、纵目面具，古蜀文明震撼首选。成都北站高铁约 20 分钟至广汉。</div>
-        <div class="bgs">
-          <span class="tb m">⚠️ 提前5天官方小程序抢票！</span>
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.1963,30.9990,三星堆博物馆&mode=transit&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>公交/高铁导航</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- D7 -->
-<div class="dc">
-  <div class="dot">七</div>
-  <div class="dh"><span class="ddate">9月23日（周三）</span><span class="dtitle">金沙遗址 · 玉林 Citywalk</span><span class="dtag">文艺烟火</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">☀️<span class="tlabel">上午</span></div>
-      <div class="sc">
-        <div class="act">☀️ 金沙遗址博物馆</div>
-        <div class="tip">太阳神鸟金箔——中华文化遗产标志。打车约 15 分钟。</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0289,30.6764,金沙遗址博物馆&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高德打车</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Citywalk header slot -->
-    <div class="sr" style="background:linear-gradient(135deg,#1a1209 0%,#3d2b1a 100%);grid-template-columns:1fr;min-height:auto">
-      <div class="sc" style="padding:16px 20px">
-        <div class="act" style="color:#D4A017;font-size:15px;letter-spacing:1px">🚶 玉林 Citywalk 下午路线</div>
-        <div class="tip" style="color:rgba(255,255,255,0.6);margin-top:2px">地铁 3 号线至芳草街站下车 · 穿舒服的鞋子 · 半天走完，想深逛一天不够</div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#f0ede6;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">📚</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站①</span>
-      </div>
-      <div class="sc">
-        <div class="act">📚 玉洁巷 · 书店群</div>
-        <div class="tip">院子文化创意园、退步集旧书房、三联思想库 / 王笛街头书店——文艺气氛最浓的起点</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0583,30.6278,玉洁巷&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#f5edf0;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">☕</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站②</span>
-      </div>
-      <div class="sc">
-        <div class="act">☕ 芳草街 · 咖啡 & 白夜花神诗空间</div>
-        <div class="tip">玉林是成都咖啡店最密集的地方。饮水村、CARPARK 露营风咖啡皆在此。白夜花神由诗人翟永明主理，艺文空间融咖啡、酒吧与文化活动于一体。</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0568,30.6295,白夜花神诗空间&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#edf3f0;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">🌴</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站③</span>
-      </div>
-      <div class="sc">
-        <div class="act">🌴 华姿路 · 火烧堰碧翠廊</div>
-        <div class="tip">两排高大棕榈树让人有身在泰国的错觉。火烧堰是一条三四百米的文化巷道，曲径通幽，不时举办大型市集。还有"幻Photism"摄影艺术空间可逛。</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0558,30.6270,华姿路成都&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#f0f0ed;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">📖</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站④</span>
-      </div>
-      <div class="sc">
-        <div class="act">📖 一苇书坊</div>
-        <div class="tip">成都独立书店代表。slogan"精神按摩"，书以人文社科为主，经常举办观影会、读书会、微醺会。坐在门外长凳看书发呆，是玉林最治愈的一角。</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0562,30.6282,一苇书坊成都&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#f5ede8;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">🎸</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站⑤</span>
-      </div>
-      <div class="sc">
-        <div class="act">🎸 玉林西路 · 小酒馆打卡</div>
-        <div class="tip">赵雷《成都》的歌词地贴铺满地面，有固定打卡相框。晚上人多要排队拍照。许多大咖成名前都在此驻唱过。人均消费约¥50。</div>
-        <div class="bgs">
-          <span class="tb m">晚上人多，注意保管财物</span>
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0601,30.6268,小酒馆玉林西路&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sr">
-      <div class="si" style="background:#edf0e8;font-size:11px;color:#8B7355;text-align:center;padding:8px;line-height:1.4;flex-direction:column;gap:2px">
-        <span style="font-size:20px">🥬</span>
-        <span class="tlabel" style="position:static;display:inline-block;margin:0">站⑥</span>
-      </div>
-      <div class="sc">
-        <div class="act">🥬 玉林横街 · 市井收尾</div>
-        <div class="tip">玉林菜市场与休闲中心，这里才是"市井本身"。谈天喝茶打牌的本地居民随处可见，烤土豆、特色小吃遍地——最后用最接地气的方式结束玉林之行。</div>
-        <div class="bgs">
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.0612,30.6255,玉林横街&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- D8 -->
-<div class="dc">
-  <div class="dot">八</div>
-  <div class="dh"><span class="ddate">9月24日（周四）</span><span class="dtitle">文殊院 · SQ843 返程</span><span class="dtag">收尾</span></div>
-  <div class="db">
-    <div class="sr">
-      <div class="si">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Wenshu_Monastery_Chengdu.jpg/640px-Wenshu_Monastery_Chengdu.jpg" alt="文殊院" onerror="this.parentNode.innerHTML='🕌'">
-        <span class="tlabel">早上</span>
-      </div>
-      <div class="sc">
-        <div class="act">🕌 文殊院抄经 · 素斋</div>
-        <div class="tip">千年古刹，红墙宫廷糕点，心灵收尾。步行约 20 分钟。</div>
-        <div class="bgs">
-          <a class="abtn walk" href="https://uri.amap.com/navigation?to=104.0628,30.6773,文殊院&mode=walking&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>步行导航</a>
-        </div>
-      </div>
-    </div>
-    <div class="sr">
-      <div class="si" style="font-size:32px;background:#e8f0f8">✈️</div>
-      <div class="sc">
-        <div class="act">✈️ 前往 TFU · SQ843 返新加坡</div>
-        <div class="tip">建议出发前 3h 前往机场。打车约 50 分钟（¥120–150）。Check-out 12:00</div>
-        <div class="bgs">
-          <span class="tb s">TFU T1 → 樟宜 T3</span>
-          <a class="abtn" href="https://uri.amap.com/navigation?to=104.4441,30.5715,成都天府国际机场&mode=taxi&src=myapp&coordinate=gaode&callnative=1" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>打车去机场</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-</div>
-
 <hr class="div">
-
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:22px">🍜</span><h2>必吃美食清单</h2><div class="ln"></div></div>
   <div class="fg">
+    <div class="fc"><div class="fi">🍄</div><div><h3>爱尚菌野生菌火锅</h3><p>17号晚首选！菌子季鲜味绝顶，清鲜暖胃，香槟广场3楼。</p></div></div>
     <div class="fc"><div class="fi">🫕</div><div><h3>火锅</h3><p>电台巷、巴蜀大将，巷子里人多的那家准没错。中辣 or 微辣？</p></div></div>
     <div class="fc"><div class="fi">🍢</div><div><h3>串串香</h3><p>马路边边、钢管厂五区，麻辣鲜香，边走边吃才够巴适。</p></div></div>
     <div class="fc"><div class="fi">🥟</div><div><h3>成都小吃</h3><p>甜水面、叶儿粑、蛋烘糕（一定要加肉松！）随处可见。</p></div></div>
     <div class="fc"><div class="fi">🍲</div><div><h3>正宗川菜</h3><p>陶德砂锅、吃客餐厅、陈麻婆豆腐，百吃不厌。</p></div></div>
     <div class="fc"><div class="fi">🐰</div><div><h3>夜宵</h3><p>双流老妈兔头、奎星楼街脑花，成都夜宵是另一种信仰。</p></div></div>
-    <div class="fc"><div class="fi">☕</div><div><h3>成都咖啡</h3><p>东郊记忆、玉林路一带独立咖啡馆密度极高，随便走进一家都好。</p></div></div>
   </div>
 </div>
-
 <hr class="div">
-
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:22px">💡</span><h2>出行锦囊</h2><div class="ln"></div></div>
   <div class="tg">
-    <div class="tc"><h3>✈️ 航班提示</h3><p>SQ842/843 直飞成都天府机场（TFU），飞行约 4h 45m，两地同为 UTC+8 无时差。</p></div>
+    <div class="tc"><h3>✈️ 航班提示</h3><p>SQ842/843 直飞 TFU，约 4h 45m，两地同为 UTC+8 无时差。</p></div>
     <div class="tc"><h3>🏨 JW Marriott 小贴士</h3><ul><li>步行至天府广场 6 分钟、春熙路约 15 分钟</li><li>Check-in 14:00 · Check-out 12:00</li><li>机场商务车 ¥300 单程，礼宾部预订</li></ul></div>
     <div class="tc"><h3>🎟️ 熊猫基地预约</h3><p>提前 <strong>14天</strong> 在"成都大熊猫繁育研究基地"公众号购票，选上午场。</p></div>
     <div class="tc"><h3>🏺 三星堆抢票</h3><p>提前 <strong>5天</strong> 官方小程序抢票，9月旺季票秒没，调好闹钟。</p></div>
-    <div class="tc"><h3>🚕 高德导航</h3><p>每个景点均配橙色按钮，手机点击唤起高德 App，一键导航或叫车，支持滴滴拼车。</p></div>
+    <div class="tc"><h3>🚇 市内交通</h3><p>支付宝/微信乘车码直接刷地铁。JW Marriott 附近天府广场站（1/2号线）。</p></div>
     <div class="tc"><h3>👟 天气与穿着</h3><p>20–28°C，备晴雨伞（华西秋雨），每天约 2 万步，平底鞋 + 薄外套标配。</p></div>
   </div>
 </div>
-
 <div class="outro">
   <blockquote>让我们烫起红锅，辣到微汗，<br>在这座永远不急不慢的城市里，<br>把每一天都过成"巴适得板"。</blockquote>
   <p class="auth">— SQ842 · 2026年9月17日 · Winston & Andy · 成都金秋之旅</p>
@@ -642,13 +275,9 @@ hr.div{border:none;border-top:1px solid var(–border);max-width:960px;margin:0 
     加入旅行 WhatsApp 群组
   </a>
 </div>
-
 <script>
-  const io = new IntersectionObserver(e => {
-    e.forEach(x => { if(x.isIntersecting){ setTimeout(()=>x.target.classList.add('vis'), x.target.dataset.d||0); io.unobserve(x.target); } });
-  }, {threshold:.08});
-  document.querySelectorAll('.dc,.fc,.tc').forEach((el,i)=>{ el.dataset.d=(i%4)*90; io.observe(el); });
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('vis'),x.target.dataset.d||0);io.unobserve(x.target);}});},{threshold:.08});
+  document.querySelectorAll('.dc,.fc,.tc').forEach((el,i)=>{el.dataset.d=(i%4)*90;io.observe(el);});
 </script>
-
 </body>
 </html>
