@@ -296,7 +296,7 @@
   <span class="lb-close" onclick="closeLb()">✕</span>
   <span class="lb-nav lb-prev" onclick="lbNav(-1)">‹</span>
   <div class="lb-box">
-    <img class="lb-img" id="lb-img" src="" alt="" onerror="tryNext(this)">
+    <img class="lb-img" id="lb-img" src="" alt="" onerror="lbImgFail(this)">
     <div class="lb-dots" id="lb-dots"></div>
     <p class="lb-cap" id="lb-cap"></p>
   </div>
@@ -312,6 +312,7 @@
   function openLb(imgs,i,cap){lbImgs=imgs;lbIdx=i||0;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';document.getElementById('lb-cap').textContent=cap||'';lbRender();}
   function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
   function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;lbRender();}
+  function lbImgFail(img){const s=img.src,d=s.lastIndexOf('.'),base=s.slice(0,d),ext=s.slice(d+1),i=EXTS.indexOf(ext);if(i<EXTS.length-1){img.src=base+'.'+EXTS[i+1];}else{lbImgs.splice(lbIdx,1);if(!lbImgs.length){closeLb();return;}lbIdx=Math.min(lbIdx,lbImgs.length-1);lbRender();}}
   function lbRender(){document.getElementById('lb-img').src=lbImgs[lbIdx];document.getElementById('lb-dots').innerHTML=lbImgs.map((_,i)=>`<div class="lb-dot${i===lbIdx?' on':''}" onclick="lbIdx=${i};lbRender()"></div>`).join('');}
   document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('open'))return;if(e.key==='ArrowLeft')lbNav(-1);else if(e.key==='ArrowRight')lbNav(1);else if(e.key==='Escape')closeLb();});
   let _tx=0;
