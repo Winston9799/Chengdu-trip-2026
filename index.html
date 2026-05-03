@@ -115,6 +115,15 @@
   .outro .auth{margin-top:28px;font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.3)}
   .outro .spice{display:inline-block;margin-top:36px;background:var(--red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
   hr.div{border:none;border-top:1px solid var(--border);max-width:960px;margin:0 auto}
+  .ticker-wrap{background:var(--ink);overflow:hidden;padding:13px 0;position:relative}
+  .ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+  .ticker-wrap::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
+  .ticker-wrap::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
+  .ticker-track{display:flex;width:max-content;animation:ticker 45s linear infinite;white-space:nowrap;will-change:transform}
+  .ticker-track:hover{animation-play-state:paused}
+  .ti{font-family:'Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:rgba(212,160,23,.82);padding:0 26px;user-select:none}
+  .ts{color:rgba(212,160,23,.28);font-size:10px;user-select:none}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(max-width:640px){.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}.vdeco{display:none}.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}.sr{grid-template-columns:90px 1fr}.si{height:120px}.hinner{flex-direction:column}.hbadge{margin-left:0}.b-strip img{width:64px;height:64px}.ddate{font-size:20px}}
 </style>
 </head>
@@ -179,6 +188,30 @@
   <div class="ovw-i"><div class="n">20°</div><div class="l">早晚凉爽</div></div>
   <div class="ovw-i"><div class="n">🐼</div><div class="l">国宝必看</div></div>
 </div>
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ti">成都探索之旅</span><span class="ts">✦</span>
+    <span class="ti">2026 · 金秋</span><span class="ts">✦</span>
+    <span class="ti">JW Marriott</span><span class="ts">✦</span>
+    <span class="ti">大熊猫繁育基地</span><span class="ts">✦</span>
+    <span class="ti">三星堆博物馆</span><span class="ts">✦</span>
+    <span class="ti">都江堰 · 青城山</span><span class="ts">✦</span>
+    <span class="ti">黄龙溪古镇</span><span class="ts">✦</span>
+    <span class="ti">武侯祠 · 锦里</span><span class="ts">✦</span>
+    <span class="ti">天府之国</span><span class="ts">✦</span>
+    <span class="ti">SQ 842</span><span class="ts">✦</span>
+    <span class="ti">成都探索之旅</span><span class="ts">✦</span>
+    <span class="ti">2026 · 金秋</span><span class="ts">✦</span>
+    <span class="ti">JW Marriott</span><span class="ts">✦</span>
+    <span class="ti">大熊猫繁育基地</span><span class="ts">✦</span>
+    <span class="ti">三星堆博物馆</span><span class="ts">✦</span>
+    <span class="ti">都江堰 · 青城山</span><span class="ts">✦</span>
+    <span class="ti">黄龙溪古镇</span><span class="ts">✦</span>
+    <span class="ti">武侯祠 · 锦里</span><span class="ts">✦</span>
+    <span class="ti">天府之国</span><span class="ts">✦</span>
+    <span class="ti">SQ 842</span><span class="ts">✦</span>
+  </div>
+</div>
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:22px">🗺️</span><h2>每日行程</h2><div class="ln"></div></div>
   <div class="tl">
@@ -198,8 +231,7 @@
       <div class="db">
         <div class="sr"><div class="si"><img loading="lazy" src="images/panda-base/1.jpg" alt="" onerror="tryNext(this)">🐼<span class="tlabel">早上</span></div><div class="sc"><div class="act">🐼 成都大熊猫繁育研究基地</div><div class="addr">📍 成都市成华区熊猫大道1375号</div><div class="tip">8:00 前入园，上午熊猫最活跃。打车约 20 分钟。</div><div class="bgs"><span class="tb m">⚠️ 提前14天公众号预约</span></div><div class="b-strip" data-folder="images/panda-base" data-title="成都大熊猫繁育研究基地"></div></div></div>
         <div class="sr"><div class="si"><img loading="lazy" src="images/dongjiaojiyi/1.jpg" alt="" onerror="tryNext(this)">🎨<span class="tlabel">下午</span></div><div class="sc"><div class="act">🎨 东郊记忆文创园</div><div class="addr">📍 成都市成华区建设南路4号</div><div class="tip">旧工厂改造文艺街区，壁画打卡、手冲咖啡</div><div class="b-strip" data-folder="images/dongjiaojiyi" data-title="东郊记忆文创园"></div></div></div>
-        <div class="sr"><div class="si"><img loading="lazy" src="images/skp/1.jpg" alt="" onerror="tryNext(this)">🌊<span class="tlabel">夜晚</span></div><div class="sc"><div class="act">🌊 成都 SKP · 音乐喷泉水柱</div><div class="addr">📍 成都市武侯区武侯大道199号（地铁3/7号线武侯大道站）</div><div class="tip">夜间 SKP 广场音乐喷泉水柱表演，灯光声控交互，视觉震撼。</div><div class="b-strip" data-folder="images/skp" data-title="成都SKP · 音乐喷泉"></div></div></div>
-        <div class="sr"><div class="si"><img loading="lazy" src="images/twin-towers/1.jpg" alt="" onerror="tryNext(this)">🏙️<span class="tlabel">夜晚</span></div><div class="sc"><div class="act">🏙️ 双子塔灯光秀</div><div class="addr">📍 成都市天府新区交子公园金融中心（地铁6号线交子公园站）</div><div class="tip">交子公园金融双子塔夜间灯光秀，色彩变幻绚烂，倒映水面极为壮观。建议 21:00 后观看。</div><div class="b-strip" data-folder="images/twin-towers" data-title="成都双子塔灯光秀"></div></div></div>
+        <div class="sr"><div class="si"><img loading="lazy" src="images/skp/1.jpg" alt="" onerror="tryNext(this)">🌊<span class="tlabel">夜晚</span></div><div class="sc"><div class="act">🌊 成都 SKP · 音乐喷泉 + 双子塔灯光秀</div><div class="addr">📍 成都市武侯区武侯大道199号（地铁3/7号线武侯大道站）</div><div class="tip">SKP 广场音乐喷泉水柱表演后，前往交子公园观赏双子塔灯光秀，色彩变幻绚烂，建议 21:00 后观看。</div><div class="b-strip" data-folder="images/skp" data-title="成都SKP · 音乐喷泉 · 双子塔"></div></div></div>
       </div>
     </div>
     <div class="dc">
