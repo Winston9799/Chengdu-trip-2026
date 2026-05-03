@@ -354,7 +354,7 @@
         const img=document.createElement('img');
         img.loading='lazy';img.src=src;img.alt='';
         img.onerror=function(){tryNext(this);};
-        img.onclick=()=>openLb(srcs.slice(),idx,title);
+        img.onclick=()=>{const vis=Array.from(strip.querySelectorAll('img')).filter(i=>i.style.display!=='none'&&i.naturalWidth>0);openLb(vis.map(i=>i.src),vis.indexOf(img),title);};
         strip.appendChild(img);
       });
     });
