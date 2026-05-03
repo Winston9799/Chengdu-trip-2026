@@ -345,7 +345,7 @@
   const _lb=document.getElementById('lb');
   _lb.addEventListener('touchstart',e=>{_tx=e.touches[0].clientX;},{passive:true});
   _lb.addEventListener('touchend',e=>{const d=_tx-e.changedTouches[0].clientX;if(Math.abs(d)>40){if(d>0)lbNav(1);else lbNav(-1);}});
-  const MAX_PHOTOS=20;
+  const MAX_PHOTOS=6;
   document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('.b-strip[data-folder]').forEach(strip=>{
       const folder=strip.dataset.folder,title=strip.dataset.title||'';
@@ -354,7 +354,7 @@
         const img=document.createElement('img');
         img.loading='lazy';img.src=src;img.alt='';
         img.onerror=function(){tryNext(this);};
-        img.onclick=()=>openLb(srcs.slice(),idx,title);
+        img.onclick=()=>{const vis=Array.from(strip.querySelectorAll('img')).filter(i=>i.style.display!=='none'&&i.naturalWidth>0);openLb(vis.map(i=>i.src),vis.indexOf(img),title);};
         strip.appendChild(img);
       });
     });
