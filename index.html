@@ -296,7 +296,7 @@
   <span class="lb-nav lb-next" onclick="lbNav(1)">›</span>
 </div>
 <script>
-  const EXTS=['jpg','JPG','png','PNG'];
+  const EXTS=['jpg','JPG','jpeg','JPEG','png','PNG'];
   function tryNext(img){const s=img.src,d=s.lastIndexOf('.'),base=s.slice(0,d),ext=s.slice(d+1),i=EXTS.indexOf(ext);if(i<EXTS.length-1){img.src=base+'.'+EXTS[i+1];}else{img.style.display='none';}}
   const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('vis'),x.target.dataset.d||0);io.unobserve(x.target);}});},{threshold:.08});
   document.querySelectorAll('.dc,.fc,.tc').forEach((el,i)=>{el.dataset.d=(i%4)*90;io.observe(el);});
