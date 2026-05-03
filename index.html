@@ -115,6 +115,15 @@
   .outro .auth{margin-top:28px;font-size:12px;letter-spacing:4px;color:rgba(255,255,255,.3)}
   .outro .spice{display:inline-block;margin-top:36px;background:var(--red);color:#fff;padding:10px 28px;border-radius:40px;font-size:13px;letter-spacing:2px}
   hr.div{border:none;border-top:1px solid var(--border);max-width:960px;margin:0 auto}
+  .ticker-wrap{background:var(--ink);overflow:hidden;padding:13px 0;position:relative}
+  .ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+  .ticker-wrap::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
+  .ticker-wrap::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
+  .ticker-track{display:flex;width:max-content;animation:ticker 45s linear infinite;white-space:nowrap;will-change:transform}
+  .ticker-track:hover{animation-play-state:paused}
+  .ti{font-family:'Noto Serif SC',serif;font-size:11px;letter-spacing:3px;color:rgba(212,160,23,.82);padding:0 26px;user-select:none}
+  .ts{color:rgba(212,160,23,.28);font-size:10px;user-select:none}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(max-width:640px){.tl::before{left:16px}.dc{padding-left:50px}.dot{left:4px}.vdeco{display:none}.finner{grid-template-columns:1fr;text-align:center}.fleg.r{text-align:center}.sr{grid-template-columns:90px 1fr}.si{height:120px}.hinner{flex-direction:column}.hbadge{margin-left:0}.b-strip img{width:64px;height:64px}.ddate{font-size:20px}}
 </style>
 </head>
@@ -178,6 +187,30 @@
   <div class="ovw-i"><div class="n">12+</div><div class="l">个 · 景点</div></div>
   <div class="ovw-i"><div class="n">20°</div><div class="l">早晚凉爽</div></div>
   <div class="ovw-i"><div class="n">🐼</div><div class="l">国宝必看</div></div>
+</div>
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ti">成都探索之旅</span><span class="ts">✦</span>
+    <span class="ti">2026 · 金秋</span><span class="ts">✦</span>
+    <span class="ti">JW Marriott</span><span class="ts">✦</span>
+    <span class="ti">大熊猫繁育基地</span><span class="ts">✦</span>
+    <span class="ti">三星堆博物馆</span><span class="ts">✦</span>
+    <span class="ti">都江堰 · 青城山</span><span class="ts">✦</span>
+    <span class="ti">黄龙溪古镇</span><span class="ts">✦</span>
+    <span class="ti">武侯祠 · 锦里</span><span class="ts">✦</span>
+    <span class="ti">天府之国</span><span class="ts">✦</span>
+    <span class="ti">SQ 842</span><span class="ts">✦</span>
+    <span class="ti">成都探索之旅</span><span class="ts">✦</span>
+    <span class="ti">2026 · 金秋</span><span class="ts">✦</span>
+    <span class="ti">JW Marriott</span><span class="ts">✦</span>
+    <span class="ti">大熊猫繁育基地</span><span class="ts">✦</span>
+    <span class="ti">三星堆博物馆</span><span class="ts">✦</span>
+    <span class="ti">都江堰 · 青城山</span><span class="ts">✦</span>
+    <span class="ti">黄龙溪古镇</span><span class="ts">✦</span>
+    <span class="ti">武侯祠 · 锦里</span><span class="ts">✦</span>
+    <span class="ti">天府之国</span><span class="ts">✦</span>
+    <span class="ti">SQ 842</span><span class="ts">✦</span>
+  </div>
 </div>
 <div class="sec">
   <div class="sec-h"><div class="ln"></div><span style="font-size:22px">🗺️</span><h2>每日行程</h2><div class="ln"></div></div>
